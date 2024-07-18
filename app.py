@@ -16,6 +16,10 @@ app.config['MYSQL_DATABASE_DB'] = 'dementia'
 mysql=MySQL(app)
 mysql.init_app(app)
 
+@app.route('/')
+def home():
+    return render_template('home.html')
+
 @app.route('/register',methods=["GET","POST"])
 def register():
     if request.method=='GET':
